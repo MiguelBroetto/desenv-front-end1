@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página inicial do site sobre a história da música e artistas impactantes">
+    <link rel="stylesheet" href="/css/inicio.css">
+    <title>Início - História da Música</title>
+
+</head>
+
+<body>
+    <h1 id="titulo-principal">🎵 História da Música</h1>
+
+    <!-- Menu de navegação com links internos -->
+    <nav>
+        <a href="inicio.html">Início</a> |
+        <a href="sobre.html">Sobre</a> |
+        <a href="contato.html">Contato</a> |
+        <a href="formulario.html">Formulário</a>
+    </nav>
+
+    <h2 class="subtitulo">Bem-vindo ao nosso site!</h2>
+    <p>A música é uma das formas de expressão mais antigas da humanidade. Desde os tempos pré-históricos até os dias
+        atuais, ela <strong>evoluiu e se transformou</strong>, acompanhando as mudanças sociais e tecnológicas.</p>
+
+    <!-- Elemento hidden - slide 08 -->
+    <div hidden>
+        <p>Esta mensagem está escondida no código, mas existe para demonstrar o atributo hidden.</p>
+    </div>
+
+    <h2 class="subtitulo">🎸 Artistas que Impactaram a Música</h2>
+    <p class="destaque">Alguns artistas foram além do entretenimento: eles <em>revolucionaram gêneros, criaram novas
+            sonoridades e inspiraram milhões</em>. Conheça alguns deles:</p>
+
+    <h2 class="subtitulo">🎤 Principais Nomes</h2>
+
+    <!-- Artistas com data attributes - slide 08 -->
+    <!-- Cada artista tem um botão com data-id, data-nome e data-ano -->
+    <div class="artista-card">
+        <p class="artista-nome"><strong>Elvis Presley</strong></p>
+        <p>Conhecido como o "Rei do Rock", trouxe o rock and roll para o mainstream nos anos 50.</p>
+        <button class="btn-ver-mais" data-id="1" data-nome="Elvis Presley" data-ano="1954"
+            title="Clique para ver mais informações sobre Elvis Presley">Ver mais</button>
+    </div>
+
+    <div class="artista-card" id="artista-beatles">
+        <p class="artista-nome"><strong>The Beatles</strong></p>
+        <p>Revolucionaram a música pop e a cultura dos anos 60 com inovações em estúdio e composições marcantes.</p>
+        <button class="btn-ver-mais" data-id="2" data-nome="The Beatles" data-ano="1962"
+            title="Clique para ver mais informações sobre The Beatles">Ver mais</button>
+    </div>
+
+    <div class="artista-card" id="artista-michael">
+        <p class="artista-nome"><strong>Michael Jackson</strong></p>
+        <p>O "Rei do Pop" transformou a indústria musical com seus videoclipes e coreografias inovadoras.</p>
+        <button class="btn-ver-mais" data-id="3" data-nome="Michael Jackson" data-ano="1971"
+            title="Clique para ver mais informações sobre Michael Jackson">Ver mais</button>
+    </div>
+
+    <div class="artista-card" id="artista-nina">
+        <p class="artista-nome"><strong>Nina Simone</strong></p>
+        <p>Cantora, pianista e ativista, usou sua música como ferramenta de luta pelos direitos civis.</p>
+        <button class="btn-ver-mais" data-id="4" data-nome="Nina Simone" data-ano="1958"
+            title="Clique para ver mais informações sobre Nina Simone">Ver mais</button>
+    </div>
+
+    <!-- Mensagem que aparece ao clicar no botão (usando JavaScript para data attributes) -->
+    <div id="mensagem-info" class="mensagem-temporaria" style="display: none;">
+        <!-- mensagem será exibida aqui via JavaScript -->
+    </div>
+
+    <h2 class="subtitulo">📊 Discografia dos Artistas</h2>
+
+    <!-- Tabela com dados - slide 09 -->
+    <!-- Tabela com thead, tbody, tfoot, colspan, rowspan, 5 linhas, 4 colunas -->
+    <table border="2" cellpadding="10" cellspacing="0" style="background-color: white;">
+        <thead style="background-color: #1e3c72; color: white;">
+            <tr>
+                <th>Artista</th>
+                <th>Álbum</th>
+                <th>Ano</th>
+                <th>Vendas (milhões)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2"><strong>Elvis Presley</strong></td>
+                <td>Elvis Presley (álbum de estreia)</td>
+                <td>1956</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Blue Hawaii</td>
+                <td>1961</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>The Beatles</strong></td>
+                <td>Sgt. Pepper's Lonely Hearts Club Band</td>
+                <td>1967</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td>Abbey Road</td>
+                <td>1969</td>
+                <td>31</td>
+            </tr>
+            <tr>
+                <td><strong>Michael Jackson</strong></td>
+                <td>Thriller</td>
+                <td>1982</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td><strong>Nina Simone</strong></td>
+                <td>I Put a Spell on You</td>
+                <td>1965</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+        <tfoot style="background-color: #f0f0f0;">
+            <tr>
+                <td colspan="3" style="text-align: right;"> <strong>Total de álbuns listados:</strong></td>
+                <td><strong>6 álbuns</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2 class="subtitulo">🌍 Link externo</h2>
+    <p>Quer saber mais? Acesse a página completa sobre a história da música:</p>
+    <a title="Clique aqui para saber mais sobre a música" href="https://pt.wikipedia.org/wiki/História_da_música"
+        target="_blank" rel="noopener noreferrer">História da Música na Wikipédia</a>
+
+    <footer>
+        <p>&copy; 2026 - História da Música | Trabalho de Desenvolvimento Front-End 1</p>
+
+    </footer>
+
+</body>
+
+</html>
