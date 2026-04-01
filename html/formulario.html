@@ -9,97 +9,130 @@
 </head>
 
 <body>
-    <h1>🎵 Cadastro de Fã da Música</h1>
 
-    <!-- Menu de navegação com links internos -->
-    <nav>
-        <a href="inicio.html">Início</a> |
-        <a href="sobre.html">Sobre</a> |
-        <a href="contato.html">Contato</a> |
-        <a href="formulario.html">Formulário</a>
-    </nav>
+    <header>
+        <h1>🎵 Cadastro de Fã da Música</h1>
 
-    <h2>Receba novidades sobre a história da música!</h2>
-    <p>Preencha o formulário abaixo para receber conteúdos exclusivos sobre artistas, discografias e a evolução musical.
-    </p>
+        <!-- Menu de navegação com links internos -->
+        <nav>
+            <a href="inicio.html">Início</a> |
+            <a href="sobre.html">Sobre</a> |
+            <a href="contato.html">Contato</a> |
+            <a href="formulario.html">Formulário</a>
+        </nav>
+    </header>
 
-    <!-- Tag form - slide 10 -->
-    <form action="/html/inicio.html" method="POST">
+    <main>
+        <section>
+            <h2>Receba novidades sobre a história da música!</h2>
+            <p>Preencha o formulário abaixo para receber conteúdos exclusivos sobre artistas, discografias e a evolução
+                musical.</p>
+        </section>
 
-        <!-- 1. Input text - Nome -->
-        <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" name="nome_completo" placeholder="Digite seu nome" required>
-        <br><br>
+        <section>
+            <form>
 
-        <!-- 2. Input email - Email -->
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email_usuario" placeholder="seuemail@exemplo.com" required>
-        <br><br>
+                <!-- Campo Nome - required, minlength, maxlength -->
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" name="nome_completo" required minlength="3" maxlength="100"
+                    placeholder="Digite seu nome"
+                    oninvalid="this.setCustomValidity('Digite seu nome completo (mínimo 3 caracteres)')"
+                    oninput="this.setCustomValidity('')">
+                <br><br>
 
-        <!-- 3. Input number - Idade -->
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade_usuario" placeholder="Sua idade" min="1" max="120">
-        <br><br>
+                <!-- Campo Email - required, type email -->
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email_usuario" required placeholder="seuemail@exemplo.com"
+                    oninvalid="this.setCustomValidity('Digite um e-mail válido (exemplo: nome@email.com)')"
+                    oninput="this.setCustomValidity('')">
+                <br><br>
 
-        <!-- 4. Input password - senha -->
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" placeholder="Digite uma senha">
-        <br><br>
+                <!-- Campo Idade - min 18, max 60 -->
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade_usuario" min="18" max="60" placeholder="Sua idade"
+                    oninvalid="this.setCustomValidity('Idade deve ser entre 18 e 60 anos')"
+                    oninput="this.setCustomValidity('')">
+                <br><br>
 
-        <!-- 5. Select - Slide 11 (obrigatório) -->
-        <label for="genero_musical">Gênero musical favorito:</label>
-        <select id="genero_musical" name="genero_favorito">
-            <option value="rock">Rock</option>
-            <option value="pop">Pop</option>
-            <option value="mpb">MPB</option>
-            <option value="jazz">Jazz</option>
-            <option value="classica">Música Clássica</option>
-            <option value="samba">Samba</option>
-        </select>
-        <br><br>
+                <!-- Campo Senha - required, minlength 6 -->
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha_usuario" required minlength="6"
+                    placeholder="Mínimo 6 caracteres"
+                    oninvalid="this.setCustomValidity('Senha deve ter no mínimo 6 caracteres')"
+                    oninput="this.setCustomValidity('')">
+                <br><br>
 
-        <!-- 6. Radio - Slide 11 (obrigatório, mesmo name) -->
-        <label>Como você conheceu nosso site?</label><br>
-        <input type="radio" id="indicacao" name="origem" value="indicacao">
-        <label for="indicacao">Indicação de amigo</label><br>
-        <input type="radio" id="redes" name="origem" value="redes_sociais">
-        <label for="redes">Redes sociais</label><br>
-        <input type="radio" id="pesquisa" name="origem" value="pesquisa_google">
-        <label for="pesquisa">Pesquisa no Google</label><br>
-        <input type="radio" id="outro" name="origem" value="outro">
-        <label for="outro">Outro</label>
-        <br><br>
+                <!-- Campo CEP - pattern 00000-000 -->
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep_usuario" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000"
+                    title="Formato: 00000-000"
+                    oninvalid="this.setCustomValidity('CEP inválido. Use o formato 00000-000 (exemplo: 12345-678)')"
+                    oninput="this.setCustomValidity('')">
+                <br><br>
 
-        <!-- 7. Checkbox - Slide 11 (obrigatório, mínimo 3 opções) -->
-        <label>Quais conteúdos você gostaria de receber?</label><br>
-        <input type="checkbox" id="historia" name="interesses" value="historia_musica">
-        <label for="historia">História da música</label><br>
-        <input type="checkbox" id="artistas" name="interesses" value="biografias">
-        <label for="artistas">Biografias de artistas</label><br>
-        <input type="checkbox" id="discografias" name="interesses" value="discografias">
-        <label for="discografias">Discografias e álbuns</label><br>
-        <input type="checkbox" id="eventos" name="interesses" value="eventos">
-        <label for="eventos">Eventos e shows</label><br>
-        <input type="checkbox" id="curiosidades" name="interesses" value="curiosidades">
-        <label for="curiosidades">Curiosidades musicais</label>
-        <br><br>
+                <!-- Campo Telefone - pattern para telefone celular -->
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone_usuario" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+                    placeholder="(11) 99999-9999" title="Formato: (11) 99999-9999"
+                    oninvalid="this.setCustomValidity('Telefone inválido. Use o formato (11) 99999-9999')"
+                    oninput="this.setCustomValidity('')">
+                <br><br>
 
-        <!-- 8. Textarea - Slide 11 (obrigatório) -->
-        <label for="mensagem">Deixe sua mensagem ou sugestão de artista:</label><br>
-        <textarea id="mensagem" name="mensagem_usuario" rows="5" cols="40"
-            placeholder="Conte pra gente qual artista você acha que deveria estar no nosso site..."></textarea>
-        <br><br>
+                <!-- Select - Gênero musical favorito -->
+                <label for="genero_musical">Gênero musical favorito:</label>
+                <select id="genero_musical" name="genero_favorito">
+                    <option value="rock">Rock</option>
+                    <option value="pop">Pop</option>
+                    <option value="mpb">MPB</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="classica">Música Clássica</option>
+                    <option value="samba">Samba</option>
+                </select>
+                <br><br>
 
-        <!-- 9. Botão de envio -->
-        <input type="submit" value="Enviar cadastro">
+                <!-- Radio - Como conheceu o site -->
+                <label>Como você conheceu nosso site?</label><br>
+                <input type="radio" id="indicacao" name="origem" value="indicacao">
+                <label for="indicacao">Indicação de amigo</label><br>
+                <input type="radio" id="redes" name="origem" value="redes_sociais">
+                <label for="redes">Redes sociais</label><br>
+                <input type="radio" id="pesquisa" name="origem" value="pesquisa_google">
+                <label for="pesquisa">Pesquisa no Google</label><br>
+                <input type="radio" id="outro" name="origem" value="outro">
+                <label for="outro">Outro</label>
+                <br><br>
 
-    </form>
+                <!-- Checkbox - Interesses -->
+                <label>Quais conteúdos você gostaria de receber?</label><br>
+                <input type="checkbox" id="historia" name="interesses" value="historia_musica">
+                <label for="historia">História da música</label><br>
+                <input type="checkbox" id="artistas" name="interesses" value="biografias">
+                <label for="artistas">Biografias de artistas</label><br>
+                <input type="checkbox" id="discografias" name="interesses" value="discografias">
+                <label for="discografias">Discografias e álbuns</label><br>
+                <input type="checkbox" id="eventos" name="interesses" value="eventos">
+                <label for="eventos">Eventos e shows</label><br>
+                <input type="checkbox" id="curiosidades" name="interesses" value="curiosidades">
+                <label for="curiosidades">Curiosidades musicais</label>
+                <br><br>
 
-    <br><br>
+                <!-- Textarea - Mensagem -->
+                <label for="mensagem">Deixe sua mensagem ou sugestão de artista:</label><br>
+                <textarea id="mensagem" name="mensagem_usuario" rows="5" cols="40"
+                    placeholder="Conte pra gente qual artista você acha que deveria estar no nosso site..."></textarea>
+                <br><br>
+
+                <!-- Botão de envio -->
+                <input type="submit" value="Enviar cadastro">
+
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 - História da Música | Trabalho de Desenvolvimento Front-End 1</p>
     </footer>
+
 </body>
 
 </html>
