@@ -1,0 +1,30 @@
+.cabecalho{
+    text-align: center;
+}
+
+.boloco1{
+    text-align: center;
+}
+.bloco2{
+    text-align: center;
+}
+.subtitulo{
+    text-align: center;
+}
+.artista-card{
+    text-align: center;
+}
+
+.rodape{
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+}
+
+.tabela{
+    width: 50%;         /* Ou outra largura menor que 100% */
+    margin: 0 auto;    /* Centraliza a tabela */
+    border-collapse: collapse; /* Opcional: melhora a aparência */
+}
