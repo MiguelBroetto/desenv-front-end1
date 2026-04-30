@@ -1,11 +1,25 @@
+header {
+    background-color: black;
+}
+
+
 .cabecalho{
     text-align: center;
 }
 
-.boloco1{
+.intro{
     text-align: center;
+    background-color: rgb(147, 178, 236);
+    width: auto;
+    height: auto;
 }
-.bloco2{
+
+.cont_intro {
+    width: 700px;
+    padding-left: 300px;
+}
+
+.descri{
     text-align: center;
 }
 .subtitulo{
