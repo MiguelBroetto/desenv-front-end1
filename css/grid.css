@@ -1,0 +1,99 @@
+/* ============================================
+   SLIDE 24/25 - CSS GRID
+   Galeria de Álbuns
+   ============================================ */
+
+/* GRID CONTAINER */
+.galeria-grid {
+    display: grid;
+    /* SLIDE 25 - auto-fill + minmax (responsivo sem media query) */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--espaco-grande);
+    padding: var(--espaco-extra);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* CARD DO GRID */
+.card-album {
+    background-color: var(--cor-branco);
+    border-radius: var(--borda-radius-grande);
+    overflow: hidden;
+    box-shadow: var(--sombra-media);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card-album:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-forte);
+}
+
+/* SLIDE 21 - Pseudo-elemento */
+.card-album::after {
+    content: "🎵";
+    position: absolute;
+    bottom: var(--espaco-pequeno);
+    right: var(--espaco-pequeno);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.card-album:hover::after {
+    opacity: 0.3;
+}
+
+.card-album img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--cor-primaria);
+}
+
+.card-album h3 {
+    padding: var(--espaco-medio) var(--espaco-medio) var(--espaco-pequeno);
+    color: var(--cor-primaria);
+}
+
+.card-album p {
+    padding: 0 var(--espaco-medio) var(--espaco-medio);
+    color: var(--cor-texto-claro);
+    font-size: var(--tamanho-pequeno);
+}
+
+.card-album .ano {
+    display: inline-block;
+    padding: var(--espaco-pequeno) var(--espaco-medio);
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border-radius: var(--borda-radius-pequeno);
+    margin: 0 var(--espaco-medio) var(--espaco-medio);
+    font-size: var(--tamanho-pequeno);
+}
+
+/* TÍTULO DA PÁGINA */
+.galeria-titulo {
+    text-align: center;
+    margin: var(--espaco-extra) 0;
+}
+
+.galeria-titulo h1::before {
+    content: "🎨 ";
+}
+
+.galeria-titulo h1::after {
+    content: " 🎨";
+}
+
+/* RESPONSIVO PARA GRID (apenas complementar) */
+@media (max-width: 768px) {
+    .galeria-grid {
+        padding: var(--espaco-medio);
+        gap: var(--espaco-medio);
+    }
+    
+    .card-album img {
+        height: 150px;
+    }
+}

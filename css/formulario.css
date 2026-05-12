@@ -1,175 +1,138 @@
-img {
-    max-width: 100%;
-    height: auto;
-}
-
 /* ============================================
-   SLIDE 16 a 20 - CSS para página Formulário
+   SLIDE 27 - ESTILIZAÇÃO DE FORMULÁRIOS
    ============================================ */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #1e3c72;
-    padding: 20px;
-}
-
-h1 {
-    color: white;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-nav {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 10px;
-    border-radius: 10px;
-    width: 80%;
+/* CONTAINER DO FORMULÁRIO */
+.form-container {
+    max-width: 600px;
     margin: 0 auto;
+    padding: var(--espaco-extra);
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 8px 15px;
-    border-radius: 5px;
-    display: inline-block;
+#imgForm{
+    margin-left: 37%;
+    margin-top: 20px;
 }
 
-nav a:hover {
-    background-color: #2c5282;
-}
-
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-img {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 20px auto;
-    border-radius: 15px;
-}
-
-section {
-    background-color: white;
-    margin-bottom: 25px;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #1e3c72;
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-}
-
+/* FORMULÁRIO COM FLEXBOX COLUMN */
 form {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-medio);
+    background-color: var(--cor-branco);
+    padding: var(--espaco-extra);
+    border-radius: var(--borda-radius-grande);
+    box-shadow: var(--sombra-media);
 }
 
+/* LABELS */
 label {
-    display: inline-block;
-    width: 200px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: var(--espaco-pequeno);
+    color: var(--cor-primaria);
 }
 
-input,
-select,
-textarea {
+/* INPUTS - ESTILO BASE */
+input, select, textarea {
+    padding: var(--espaco-pequeno) var(--espaco-medio);
+    border: 2px solid #ddd;
+    border-radius: var(--borda-radius-pequeno);
+    font-size: var(--tamanho-normal);
+    transition: all 0.3s ease;
     width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+/* SLIDE 27 - :focus (campo com foco) */
+input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #1e3c72;
-    box-shadow: 0 0 5px rgba(30, 60, 114, 0.3);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.2);
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+/* SLIDE 27 - :valid e :invalid (validação visual) */
+input:valid {
+    border-color: var(--cor-sucesso);
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--cor-erro);
+}
+
+/* CHECKBOXES E RADIOS */
+input[type="radio"], input[type="checkbox"] {
     width: auto;
-    margin-right: 10px;
+    margin-right: var(--espaco-pequeno);
 }
 
+/* SLIDE 21 - :first-child nos radios */
+input[type="radio"]:first-of-type {
+    margin-left: 0;
+}
+
+/* BOTÃO DE ENVIO */
 input[type="submit"] {
-    background-color: #1e3c72;
-    color: white;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
     border: none;
     cursor: pointer;
-    width: auto;
-    padding: 12px 30px;
-    margin-top: 10px;
+    padding: var(--espaco-medio);
+    font-size: var(--tamanho-normal);
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: var(--espaco-medio);
 }
 
+/* SLIDE 21 - :hover e :active no botão */
 input[type="submit"]:hover {
-    background-color: #2c5282;
+    background-color: var(--cor-primaria-clara);
+    transform: translateY(-2px);
 }
 
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* RADIO E CHECKBOX GROUPS */
+.radio-group, .checkbox-group {
+    margin-bottom: var(--espaco-pequeno);
+}
+
+.radio-group label, .checkbox-group label {
+    font-weight: normal;
+    margin-right: var(--espaco-medio);
+}
+
+/* SELECT ESTILIZADO */
+select {
+    background-color: var(--cor-branco);
+    cursor: pointer;
+}
+
+/* TEXTAREA */
 textarea {
     resize: vertical;
+    min-height: 100px;
 }
 
-.subtitulo {
-    color: #1e3c72;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+/* SLIDE 27 - MENSAGEM DE ERRO VISUAL */
+.error-message {
+    color: var(--cor-erro);
+    font-size: var(--tamanho-pequeno);
+    margin-top: -10px;
+    margin-bottom: var(--espaco-pequeno);
 }
 
-footer {
-    background-color: #1e3c72;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
+/* RESPONSIVO */
 @media (max-width: 768px) {
-    nav {
-        width: 95%;
+    .form-container {
+        padding: var(--espaco-medio);
     }
-
-    nav a {
-        display: inline-block;
-        margin: 5px;
+    
+    form {
+        padding: var(--espaco-medio);
     }
-
-    label {
-        display: block;
-        width: 100%;
-    }
-
-    section {
-        padding: 15px;
+    
+    input, select, textarea {
+        padding: var(--espaco-pequeno);
     }
 }

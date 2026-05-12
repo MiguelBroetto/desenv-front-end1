@@ -1,0 +1,360 @@
+/* ============================================
+   SLIDE 28 - VARIÁVEIS CSS (CUSTOM PROPERTIES)
+   ============================================ */
+
+:root {
+    /* CORES PRINCIPAIS */
+    --cor-primaria: #1e3c72;
+    --cor-primaria-escura: #0f2442;
+    --cor-primaria-clara: #2c5282;
+    --cor-secundaria: #e8e8e8;
+    --cor-fundo: #f5f5f5;
+    --cor-texto: #333;
+    --cor-texto-claro: #666;
+    --cor-branco: #ffffff;
+    --cor-sucesso: #16a34a;
+    --cor-erro: #dc2626;
+    --cor-aviso: #eab308;
+
+    /* ESPAÇAMENTOS */
+    --espaco-pequeno: 8px;
+    --espaco-medio: 16px;
+    --espaco-grande: 24px;
+    --espaco-extra: 32px;
+
+    /* TIPOGRAFIA */
+    --fonte-principal: Arial, sans-serif;
+    --fonte-titulo: 'Segoe UI', Arial, sans-serif;
+    --tamanho-pequeno: 0.875rem;
+    --tamanho-normal: 1rem;
+    --tamanho-grande: 1.5rem;
+    --tamanho-extra: 2rem;
+
+    /* BORDAS */
+    --borda-radius-pequeno: 5px;
+    --borda-radius-medio: 10px;
+    --borda-radius-grande: 15px;
+
+    /* SOMBRAS */
+    --sombra-leve: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --sombra-forte: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* RESET + BOX MODEL + POSITION BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* SLIDE 20 - POSITION: STICKY no header */
+header {
+    background-color: var(--cor-primaria);
+    padding: var(--espaco-grande);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* SLIDE 20 - POSITION: RELATIVE para usar como referência */
+.cabecalho {
+    position: relative;
+    text-align: center;
+}
+
+/* SLIDE 22/23 - FLEXBOX no menu */
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espaco-pequeno);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: var(--espaco-pequeno) var(--espaco-medio);
+    border-radius: var(--borda-radius-medio);
+}
+
+nav a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    padding: var(--espaco-pequeno) var(--espaco-medio);
+    border-radius: var(--borda-radius-pequeno);
+    transition: all 0.3s ease;
+}
+
+/* SLIDE 21 - PSEUDO-CLASSE :hover */
+nav a:hover {
+    background-color: var(--cor-primaria-clara);
+    transform: translateY(-2px);
+}
+
+/* SLIDE 21 - PSEUDO-CLASSES :first-child e :last-child */
+nav a:first-child {
+    font-weight: bold;
+}
+
+nav a:last-child {
+    background-color: var(--cor-sucesso);
+}
+
+/* TÍTULOS */
+h1,
+h2,
+h3 {
+    font-family: var(--fonte-titulo);
+}
+
+h1 {
+    color: var(--cor-branco);
+    text-align: center;
+    font-size: var(--tamanho-extra);
+    margin-bottom: var(--espaco-medio);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: var(--cor-primaria);
+    font-size: var(--tamanho-grande);
+    margin-bottom: var(--espaco-medio);
+    border-left: 5px solid var(--cor-primaria);
+    padding-left: var(--espaco-medio);
+}
+
+/* SLIDE 21 - PSEUDO-ELEMENTOS ::before e ::after */
+h2::before {
+    content: "♪ ";
+    color: var(--cor-primaria);
+    font-size: 1.2em;
+}
+
+h2::after {
+    content: " ♪";
+    color: var(--cor-primaria);
+    font-size: 1.2em;
+}
+
+/* FOOTER com position relative */
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: var(--espaco-grande);
+    margin-top: var(--espaco-extra);
+    position: relative;
+}
+
+/* SLIDE 20 - POSITION: ABSOLUTE no footer (exemplo decorativo) */
+footer::before {
+    content: "🎵";
+    position: absolute;
+    left: var(--espaco-medio);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    font-size: 2rem;
+}
+
+footer::after {
+    content: "🎵";
+    position: absolute;
+    right: var(--espaco-medio);
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    font-size: 2rem;
+}
+
+/* CARDS com position relative e hover */
+.artista-card {
+    background-color: var(--cor-branco);
+    border-radius: var(--borda-radius-grande);
+    padding: var(--espaco-grande);
+    margin: var(--espaco-medio) auto;
+    width: 80%;
+    box-shadow: var(--sombra-media);
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SLIDE 21 - Pseudo-elemento decorativo nos cards */
+.artista-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--cor-primaria);
+    transition: width 0.3s ease;
+}
+
+.artista-card:hover::before {
+    width: 10px;
+}
+
+.artista-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-forte);
+}
+
+/* BOTÕES */
+.btn-ver-mais {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border: none;
+    padding: var(--espaco-pequeno) var(--espaco-grande);
+    border-radius: var(--borda-radius-pequeno);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* SLIDE 21 - :hover e :active nos botões */
+.btn-ver-mais:hover {
+    background-color: var(--cor-primaria-clara);
+    transform: scale(1.05);
+}
+
+.btn-ver-mais:active {
+    transform: scale(0.95);
+}
+
+/* SLIDE 20 - POSITION: FIXED (botão flutuante de voltar ao topo) */
+.btn-topo {
+    position: fixed;
+    bottom: var(--espaco-grande);
+    right: var(--espaco-grande);
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: var(--tamanho-grande);
+    box-shadow: var(--sombra-media);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.btn-topo:hover {
+    background-color: var(--cor-primaria-clara);
+    transform: scale(1.1);
+}
+
+/* TABELA responsiva */
+.tabela {
+    width: 80%;
+    margin: var(--espaco-extra) auto;
+    padding: var(--espaco-medio);
+    background-color: var(--cor-branco);
+    border-radius: var(--borda-radius-grande);
+    border: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: var(--espaco-pequeno) var(--espaco-medio);
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* SLIDE 21 - :first-child e :last-child na tabela */
+th:first-child {
+    border-top-left-radius: var(--borda-radius-medio);
+}
+
+th:last-child {
+    border-top-right-radius: var(--borda-radius-medio);
+}
+
+/* SLIDE 21 - :nth-child para zebra striping */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* ============================================
+   SLIDE 26 - MEDIA QUERIES (Mobile First)
+   ============================================ */
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .artista-card {
+        width: 90%;
+    }
+
+    .tabela {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: var(--espaco-pequeno);
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .artista-card {
+        width: 95%;
+        padding: var(--espaco-medio);
+    }
+
+    .tabela {
+        width: 100%;
+        padding: var(--espaco-pequeno);
+    }
+
+    th,
+    td {
+        padding: var(--espaco-pequeno);
+        font-size: var(--tamanho-pequeno);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .btn-topo {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        bottom: var(--espaco-medio);
+        right: var(--espaco-medio);
+    }
+}

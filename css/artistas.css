@@ -1,155 +1,87 @@
 /* ============================================
-   SLIDE 16 a 20 - CSS para páginas de artistas
+   CSS para páginas de artistas
    (elvis.html, beatles.html, michael.html, simone.html)
    ============================================ */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    line-height: 1.6;
-}
-
-header {
-    background-color: #1e3c72;
-    padding: 20px;
-}
-
-h1 {
-    color: white;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-nav {
-    text-align: center;
-    background-color: rgba(0,0,0,0.3);
-    padding: 10px;
-    border-radius: 10px;
-    width: 80%;
-    margin: 0 auto;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 8px 15px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
-nav a:hover {
-    background-color: #2c5282;
-    color: white;
-}
-
+/* CONTEÚDO PRINCIPAL */
 main {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--espaco-grande);
 }
 
+/* SEÇÕES */
 section {
-    background-color: white;
-    margin-bottom: 30px;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: var(--cor-branco);
+    margin-bottom: var(--espaco-extra);
+    padding: var(--espaco-grande);
+    border-radius: var(--borda-radius-grande);
+    box-shadow: var(--sombra-leve);
 }
 
-h2 {
-    color: #1e3c72;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    border-left: 5px solid #1e3c72;
-    padding-left: 15px;
-}
-
-h3 {
-    color: #2c5282;
-    font-size: 1.3rem;
-    margin: 20px 0 15px 0;
-}
-
-p {
-    margin-bottom: 15px;
-}
-
+/* LISTAS */
 ul {
-    margin-left: 30px;
-    margin-bottom: 20px;
+    margin-left: var(--espaco-extra);
+    margin-bottom: var(--espaco-medio);
 }
 
 li {
-    margin-bottom: 10px;
+    margin-bottom: var(--espaco-pequeno);
+    padding-left: var(--espaco-pequeno);
 }
 
-strong {
-    color: #2c5282;
+/* SLIDE 21 - :last-child na lista */
+li:last-child {
+    margin-bottom: 0;
 }
 
+/* IFRAMES */
 iframe {
     display: block;
     max-width: 100%;
-    margin: 20px auto;
-    border-radius: 10px;
+    margin: var(--espaco-medio) auto;
+    border-radius: var(--borda-radius-medio);
 }
 
-.subtitulo {
-    color: #1e3c72;
-    font-size: 1.6rem;
-    margin-top: 20px;
+/* SLIDE 20 - POSITION: RELATIVE + ABSOLUTE (exemplo) */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--borda-radius-medio);
 }
 
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* LINKS */
 a {
-    color: #1e3c72;
+    color: var(--cor-primaria);
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: var(--cor-primaria-clara);
     text-decoration: underline;
-    color: #2c5282;
-}
-
-footer {
-    background-color: #1e3c72;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
-
-footer p {
-    margin: 5px 0;
 }
 
 @media (max-width: 768px) {
-    nav {
-        width: 95%;
-    }
-    
-    nav a {
-        display: inline-block;
-        margin: 5px;
+    main {
+        padding: var(--espaco-medio);
     }
     
     section {
-        padding: 15px;
+        padding: var(--espaco-medio);
     }
     
-    h2 {
-        font-size: 1.5rem;
-    }
-    
-    iframe {
-        width: 100%;
-        height: auto;
+    ul {
+        margin-left: var(--espaco-medio);
     }
 }
