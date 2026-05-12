@@ -4,7 +4,6 @@
 
 .intro {
     text-align: center;
-    background-color: rgb(147, 178, 236);
     width: 100%;
     padding: var(--espaco-extra) var(--espaco-grande);
     margin-bottom: var(--espaco-extra);
@@ -21,6 +20,11 @@
 .cont_intro p {
     text-align: justify;
     margin-bottom: var(--espaco-medio);
+}
+
+.subtitulo {
+    margin-top: 20px;
+    text-align: center;
 }
 
 #imgElvis {

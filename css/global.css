@@ -7,12 +7,11 @@
     --cor-primaria: #1e3c72;
     --cor-primaria-escura: #0f2442;
     --cor-primaria-clara: #2c5282;
-    --cor-secundaria: #e8e8e8;
     --cor-fundo: #f5f5f5;
     --cor-texto: #333;
     --cor-texto-claro: #666;
     --cor-branco: #ffffff;
-    --cor-sucesso: #16a34a;
+    --cor-sucesso: #131514;
     --cor-erro: #dc2626;
     --cor-aviso: #eab308;
 
@@ -99,10 +98,6 @@ nav a:hover {
 /* SLIDE 21 - PSEUDO-CLASSES :first-child e :last-child */
 nav a:first-child {
     font-weight: bold;
-}
-
-nav a:last-child {
-    background-color: var(--cor-sucesso);
 }
 
 /* TÍTULOS */

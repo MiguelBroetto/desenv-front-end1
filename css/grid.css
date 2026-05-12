@@ -85,6 +85,9 @@
 .galeria-titulo h1::after {
     content: " 🎨";
 }
+#tituloGaleria{
+    color: black;
+}
 
 /* RESPONSIVO PARA GRID (apenas complementar) */
 @media (max-width: 768px) {
