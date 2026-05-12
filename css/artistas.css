@@ -1,5 +1,6 @@
 /* ============================================
-   SLIDE 16 a 20 - CSS para página Sobre
+   SLIDE 16 a 20 - CSS para páginas de artistas
+   (elvis.html, beatles.html, michael.html, simone.html)
    ============================================ */
 
 * {
@@ -46,10 +47,11 @@ nav a {
 
 nav a:hover {
     background-color: #2c5282;
+    color: white;
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -70,27 +72,50 @@ h2 {
     padding-left: 15px;
 }
 
+h3 {
+    color: #2c5282;
+    font-size: 1.3rem;
+    margin: 20px 0 15px 0;
+}
+
 p {
     margin-bottom: 15px;
-    font-size: 1rem;
 }
 
 ul {
     margin-left: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 strong {
     color: #2c5282;
 }
 
-em {
-    font-style: italic;
-    color: #555;
+iframe {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.subtitulo {
+    color: #1e3c72;
+    font-size: 1.6rem;
+    margin-top: 20px;
+}
+
+a {
+    color: #1e3c72;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2c5282;
 }
 
 footer {
@@ -121,5 +146,10 @@ footer p {
     
     h2 {
         font-size: 1.5rem;
+    }
+    
+    iframe {
+        width: 100%;
+        height: auto;
     }
 }
