@@ -147,32 +147,103 @@ tfoot td {
 }
 
 /* MOBILE */
+/* ============================================
+   RESPONSIVIDADE MOBILE
+============================================ */
+
 @media (max-width: 768px) {
-    .cont_intro {
-        width: 95%;
-        padding: var(--espaco-pequeno);
+
+    body {
+        overflow-x: hidden;
     }
-    
-    .artista-card {
-        width: 95%;
-        padding: var(--espaco-medio);
+
+    /* HEADER */
+    .cabecalho {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
     }
-    
-    .tabela {
-        width: 95%;
-        padding: var(--espaco-pequeno);
+
+    #titulo-principal {
+        font-size: 1.5rem;
+        white-space: normal;
     }
-    
+
+    /* MENU */
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    nav a {
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        white-space: nowrap;
+    }
+
+    /* CONTEÚDO */
+    .cont_intro,
+    .artista-card,
+    .tabela,
     .descri {
         width: 95%;
-        padding: var(--espaco-medio);
+        padding: 15px;
     }
-    
+
     .intro {
-        padding: var(--espaco-medio);
+        padding: 15px;
     }
-    
+
     #imgElvis {
-        width: 95%;
+        width: 100%;
+        height: auto;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 480px) {
+
+    #titulo-principal {
+        font-size: 1.2rem;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+    }
+
+    .subtitulo {
+        font-size: 1.1rem;
+    }
+
+    .destaque {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
 }
