@@ -8,7 +8,6 @@
     padding: var(--espaco-extra) var(--espaco-grande);
     margin-bottom: var(--espaco-extra);
     border-radius: var(--borda-radius-grande);
-    border: 2px solid var(--cor-primaria);
 }
 
 .cont_intro {
